@@ -39,3 +39,4 @@ Full plan: [PLAN.md](PLAN.md).
 
 ### Git
 16. Commit only when the owner asks. Use clear messages, one block per commit where possible.
+17. **No Claude attribution.** Never add `Co-Authored-By: Claude` or any "Generated with Claude Code" line to commits or PRs. The owner is the only contributor.
