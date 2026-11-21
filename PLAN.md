@@ -22,8 +22,8 @@ Every block has a **goal**, a **deliverable**, and a **"how you test it"** check
 - Blackwell GPUs need recent CUDA (12.8+) and a recent vLLM/PyTorch build. Verify this in B0.
 
 ### Blocks
-- [ ] **B0 — Setup.** `uv` project (PyPI name `agent-tipping`), `src/agent_tipping/` layout, ruff, pytest, GitHub Actions CI, repo `georgemoretti/tipping`. On the Windows PC: WSL2 + CUDA + vLLM, serving an OpenAI-compatible API that the Mac can reach over the local network.
-  *Test:* `pytest` is green on the Mac. A script on the Mac sends 32 parallel requests to vLLM on the Windows PC and prints tokens/s.
+- [ ] **B0 — Setup.** `uv` project (PyPI name `agent-tipping`), `src/agent_tipping/` layout, ruff, pytest, GitHub Actions CI, repo `georgemoretti/tipping`. On the Windows PC: native uv dev environment + vLLM in WSL2, serving an OpenAI-compatible API on `localhost:8000`.
+  *Test:* `pytest` is green on Windows. `scripts/vllm_smoke.py` sends 32 parallel requests to vLLM and prints tokens/s.
 - [ ] **B1 — Toy agent + toy environment.** A tiny LangGraph agent (3–4 tools, e.g. a mini shop) with deterministic tools, 10 tasks, and a known success check per task. Some tasks are designed to have a clear decisive step. It's also the test fixture for all later blocks.
   *Test:* run all tasks with the local model and see a mix of passes and failures.
 - [ ] **B2 — Data model + Trace store.** Dataclasses for `Run`, `Step` (node, LLM call, tool call, checkpoint id), `Resample`, `Outcome`. Stored in one SQLite file.
