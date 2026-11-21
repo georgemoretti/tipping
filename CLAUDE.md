@@ -7,7 +7,7 @@ Full plan: [PLAN.md](PLAN.md).
 ## Context
 - Owner: ML/NLP engineer (4 yrs, LLM agents in production), 1st-year PhD on *Methods for Reliable and Efficient Evaluation of Multi-Step LLM Agents*.
 - Goal: open-source tool + arXiv paper + LinkedIn posts → ML/AI engineer offer in the Netherlands within ~6 months (from Nov 2026).
-- Hardware: RTX 5060 Ti 16 GB on a **separate Windows PC** (vLLM runs in WSL2). Code is written on the Mac. Stack: Python, PyTorch, LangChain/LangGraph.
+- Hardware: RTX 5060 Ti 16 GB on the Windows PC. Code and tests run natively on Windows (uv). vLLM runs in WSL2 (Ubuntu-22.04) and serves on `localhost:8000`. Setup: [docs/setup-gpu-windows.md](docs/setup-gpu-windows.md). Stack: Python, PyTorch, LangChain/LangGraph.
 - Code ownership: **Claude writes each block with tests; the owner runs the checks and confirms.**
 - Repo: `github.com/georgemoretti/tipping` (public). PyPI package: **`agent-tipping`**, import name `agent_tipping`, CLI command `tipping`. (`tipping` is taken on PyPI.)
 

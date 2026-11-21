@@ -1,14 +1,14 @@
 """Smoke test for the local vLLM server (block B0).
 
-Checks from the Mac that the vLLM server on the Windows PC:
+Checks from Windows that the vLLM server running in WSL2:
   1. is reachable and reports its model,
   2. handles N parallel chat requests (prints tokens/s),
   3. returns a proper tool call (needed by the agent in B1).
 
-Usage:
-    export TIPPING_LLM_BASE_URL=http://<windows-pc-ip>:8000/v1
-    export TIPPING_LLM_API_KEY=<the key you passed to vllm serve>
+Usage (PowerShell, from the repo root; the default URL is http://localhost:8000/v1):
     uv run python scripts/vllm_smoke.py --n 32
+
+Optional environment variables: TIPPING_LLM_BASE_URL, TIPPING_LLM_API_KEY, TIPPING_LLM_MODEL.
 """
 
 from __future__ import annotations
